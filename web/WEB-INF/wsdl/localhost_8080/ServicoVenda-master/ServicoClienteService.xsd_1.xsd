@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://servico.ifsul.edu.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servico.ifsul.edu.br/">
+
+<xs:element name="alterar" type="tns:alterar"/>
+
+<xs:element name="alterarResponse" type="tns:alterarResponse"/>
+
+<xs:element name="cliente" type="tns:cliente"/>
+
+<xs:element name="inserir" type="tns:inserir"/>
+
+<xs:element name="inserirResponse" type="tns:inserirResponse"/>
+
+<xs:element name="listaClientes" type="tns:listaClientes"/>
+
+<xs:element name="listaClientesResponse" type="tns:listaClientesResponse"/>
+
+<xs:element name="remover" type="tns:remover"/>
+
+<xs:element name="removerResponse" type="tns:removerResponse"/>
+
+<xs:complexType name="inserir">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="endereco" type="xs:string"/>
+<xs:element name="val_compra" type="xs:double"/>
+<xs:element name="cep_origem" type="xs:string"/>
+<xs:element name="cep_destino" type="xs:string"/>
+<xs:element name="val_frete" type="xs:double"/>
+<xs:element name="tipo_frete" type="xs:int"/>
+<xs:element name="val_total" type="xs:double"/>
+<xs:element name="prazo_entrega" type="xs:string"/>
+<xs:element name="peso" type="xs:decimal"/>
+<xs:element name="formato" type="xs:int"/>
+<xs:element name="comprimento" type="xs:decimal"/>
+<xs:element name="altura" type="xs:decimal"/>
+<xs:element name="largura" type="xs:decimal"/>
+<xs:element name="diametro" type="xs:decimal"/>
+<xs:element name="maoPropria" type="xs:string"/>
+<xs:element name="valorDeclarado" type="xs:double"/>
+<xs:element name="avisoRecebimento" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="inserirResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="remover">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaClientes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaClientesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterar">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

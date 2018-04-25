@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/templates/template.xhtml">
+        <ui:define name="titulo">Produtos</ui:define>
+        <ui:define name="conteudo">
+            
+            <h:form id="formListagem">
+                <div align="right">
+                <p:commandButton icon="ui-icon-pencil"  action="#{controllerCliente.novo()}"                                                             
+                                value="Novo" process="@this"/>
+                </div>
+                <h:panelGroup>
+                    <p:messages/>
+                    <p:dataTable value="#{controllerCliente.lista}" var="cliente" reflow="true" emptyMessage="Não há registros">
+                        
+                        <p:column headerText="Id">
+                            <p:outputLabel value="#{cliente.id}"/>
+                        </p:column>
+                        
+                        <p:column headerText="Nome">
+                            <p:outputLabel value="#{cliente.nome}"/>
+                        </p:column>
+                        
+                        <p:column headerText="Ações">
+                            <p:commandButton icon="ui-icon-pencil" action="#{controllerCliente.alterar(cliente)}"
+                                             value="Alterar" update="formListagem" process="@this" />
+                            
+                            <p:commandButton icon="ui-icon-pencil" action="#{controllerCliente.excluir(cliente.id)}"
+                                             value="Excluir" update="formListagem" process="@this" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                </h:panelGroup>
+            </h:form>
+            
+        </ui:define>
+    </ui:composition>
+</html>

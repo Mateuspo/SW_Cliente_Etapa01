@@ -27,21 +27,18 @@
                         <b:inputText value="#{controllerCliente.cliente.prazoEntrega}" label="Prazo" readonly="true" />
 
                         <b:selectOneMenu value="#{controllerCliente.cliente.tipoFrete}" label="Frete" required="true">
-
                             <f:selectItem itemLabel="Selecione..." itemValue="" />
-                            <f:selectItem itemLabel="SEDEX Varejo" itemValue="40010" />
-                            <f:selectItem itemLabel="SEDEX a Cobrar Varejo" itemValue="40045" />
+                            <f:selectItem itemLabel="SEDEX 10 (à vista e a faturar)*" itemValue="40215" />
                             <f:selectItem itemLabel="SEDEX 10 Varejo" itemValue="40215" />
-                            <f:selectItem itemLabel="SEDEX Hoje Varejo" itemValue="40290" />
-                            <f:selectItem itemLabel="PAC Varejo" itemValue="41106" />
+                            <f:selectItem itemLabel="SEDEX 12 ( à vista e a faturar)*" itemValue="40169" />
+                            <f:selectItem itemLabel="SEDEX a Cobrar Varejo" itemValue="40045" />
                             <f:selectItem itemLabel="SEDEX à vista" itemValue="04014" />
                             <f:selectItem itemLabel="SEDEX à vista pagamento na entrega" itemValue="04065" />
+                            <f:selectItem itemLabel="SEDEX Hoje Varejo" itemValue="40290" />
+                            <f:selectItem itemLabel="SEDEX Varejo" itemValue="40010" />
                             <f:selectItem itemLabel="PAC à vista" itemValue="04510" />
                             <f:selectItem itemLabel="PAC à vista pagamento na entrega" itemValue="04707" />
-                            <f:selectItem itemLabel="SEDEX 12 ( à vista e a faturar)*" itemValue="40169" />
-                            <f:selectItem itemLabel="SEDEX 10 (à vista e a faturar)*" itemValue="40215" />
-                            <f:selectItem itemLabel="SEDEX Hoje Varejo*" itemValue="40290" />
-
+                            <f:selectItem itemLabel="PAC Varejo" itemValue="41106" />
                         </b:selectOneMenu>
 
                         <b:inputText value="#{controllerCliente.cliente.altura}" label="Altura" required="true"/>
@@ -54,25 +51,19 @@
                         <b:inputText value="#{controllerCliente.cliente.valorDeclarado}" label="Valor declarado" required="true"/>
 
                         <b:selectOneMenu value="#{controllerCliente.cliente.avisoRecebimento}" label="Aviso Recebimento">
-
                             <f:selectItem itemLabel="Não" itemValue="N" />
                             <f:selectItem itemLabel="Sim" itemValue="S" />
-
                         </b:selectOneMenu>
 
                         <b:selectOneMenu value="#{controllerCliente.cliente.maoPropria}" label="Mão Própria" title="">
-
                             <f:selectItem itemLabel="Não" itemValue="N" />
                             <f:selectItem itemLabel="Sim" itemValue="S" />
-
                         </b:selectOneMenu>
 
                         <b:selectOneMenu value="#{controllerCliente.cliente.formato}" label="Formato">
-
                             <f:selectItem itemLabel="Caixa" itemValue="1" />
                             <f:selectItem itemLabel="Rolo Prisma" itemValue="2" />
                             <f:selectItem itemLabel="Envelope" itemValue="3" />
-
                         </b:selectOneMenu>
 
                         <b:inputText value="#{controllerCliente.cliente.valCompra}" label="Valor Compra" />
